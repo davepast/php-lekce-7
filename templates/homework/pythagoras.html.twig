@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block stylesheets %}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top ">
+    <a class="navbar-brand" href="#">Navigace</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('homework_index') }}">Index</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('homework_list') }}">List</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('homework_remember') }}">Remember</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="{{ path('homework_pythagoras') }}">Pythagoras</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<!-- /.container -->
+<main role="main" class="container-fluid" style="padding-top: 70px">
+    <div class="starter-template">
+
+        <div class="container-fluid">
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="col-6">
+                    <h2 class="text-center">Obdelník</h2>
+                    <table class="table">
+                        <tr>
+                            <th>strana a</th>
+                            <td>{{ a }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>strana b</th>
+                            <td>{{ b }}</td>
+                        </tr>
+
+                        <tr>
+                            <th>obvod obdelníku</th>
+                            <td><b>o = 2(a+b)</b> = 2( {{ a }}+{{ b }} ) = <b>{{ obdelnikObvod }} cm</b></td>
+                        </tr>
+
+                        <tr>
+                            <th>obsah obdelníku</th>
+                            <td><b>S = a*b </b> = {{ a }}*{{ b }} = <b>{{ obdelnikObsah }} cm^2</b></td>
+                        </tr>
+                    </table>
+
+                    <img src="http://web.quick.cz/haramule/obdelnik.gif" class="img-fluid" alt="Obdelník">
+                </div>
+
+                <div class="col-6">
+                    <h2 class="text-center">Rovnostranný trojúhelník</h2>
+                    <table class="table">
+                        <tr>
+                            <th>strana a</th>
+                            <td>{{ strana }} cm</td>
+                        </tr>
+
+                        <tr>
+                            <th>úhel &alpha;</th>
+                            <td>{{ uhel }} °</td>
+                        </tr>
+
+                        <tr>
+                            <th>obvod trojúhelníku</th>
+                            <td><b>o = 3a</b> = 3* {{ strana }} = <b> {{ trojuhelnikObvod }} cm</b></td>
+                        </tr>
+
+                        <tr>
+                            <th>výška na stranu a</th>
+                            <td><b>v = a*sin α</b> = {{ strana }} * sin {{ uhel }} ° = <b> {{ vyska }} cm</b></td>
+                        </tr>
+
+                        <tr>
+                            <th>obsah trojúhelníku</th>
+                            <td><b>S = (a*v)/2</b> = ( {{ strana }} * {{ vyska }} )/2 = <b> {{ trojuhelnikObsah }} cm^2</b></td>
+                        </tr>
+                    </table>
+                    <img src="http://www.diktatyapriklady.cz/wp-content/uploads/2013/10/rovnostranny.png" class="img-fluid" alt="Trojúhelník">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}
