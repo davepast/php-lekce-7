@@ -84,14 +84,18 @@ class HomeworkController extends AbstractController
     }
 
 /**
- * @Route("/pythagoras", name="homework_pythagoras")
+ * @Route("/pythagoras/{a}/{b}/{strana}/{uhel}", name="homework_pythagoras")
  */
-    public function pythagoras()
+    public function pythagoras($a, $b, $strana, $uhel)
     {
+        /*
+
         $a = 3;
         $b = 4;
         $strana = 6;
         $uhel = 60;
+
+        */
 
         return $this->render('homework/pythagoras.html.twig', [
             'controller_name' => 'Pythagoras',
@@ -108,9 +112,6 @@ class HomeworkController extends AbstractController
             'trojuhelnikObsah' => round(($strana * sin(deg2rad($uhel))) * $strana / 2),
             'obdelnikObvod' => 2 * ($a + $b),
             'trojuhelnikObvod' => 3 * $strana,
-
-
-
         ]);
     }
 }

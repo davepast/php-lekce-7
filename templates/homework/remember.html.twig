@@ -32,7 +32,7 @@
                     <a class="nav-link disabled" href="{{ path('homework_remember') }}">Remember</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('homework_pythagoras') }}">Pythagoras</a>
+                    <a class="nav-link" href="{{ path('homework_pythagoras', {'a': 3, 'b': 4, 'strana': 6, 'uhel': 60}) }}">Pythagoras</a>
                 </li>
             </ul>
         </div>
@@ -52,6 +52,7 @@
                     <a href="{{ path('homework_index') }}">index</a>
                     <a href="{{ path('homework_remember') }}">remember</a>
                     <a href="{{ path('homework_list') }}">list</a>
+                    <a href="{{ path('homework_pythagoras', {'a': 3, 'b': 4, 'strana': 6, 'uhel': 60}) }}">pythagoras</a>
 
                     <br>
                     <p>
