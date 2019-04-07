@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books by Price{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h2>Books by Price</h2>
+    <table>
+        <thead>
+        <tr>
+            <td>Author</td>
+            <td>Year of Issue</td>
+            <td>Page Count</td>
+            <td>Price</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books%}
+            <tr>
+                <td>{{ book.author }}</td>
+                <td>{{ book.issueYear }}</td>
+                <td>{{ book.pageCount }}</td>
+                <td>{{ book.price }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ path('book_index') }}">Výpis všech záznamů databáze v CRUDu</a>
+</div>
+{% endblock %}

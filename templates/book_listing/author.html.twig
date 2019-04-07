@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books by Authors{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+
+        {% for author in authors %}
+            <h2>Books by {{ author.author }}</h2>
+            <table>
+                <thead>
+                <tr>
+                    <td>Author</td>
+                    <td>Year of Issue</td>
+                    <td>Page Count</td>
+                    <td>Price</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% for book in books if book.author == author.author %}
+                    <tr>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.issueYear }}</td>
+                        <td>{{ book.pageCount }}</td>
+                        <td>{{ book.price }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+        <a href="{{ path('book_index') }}">Výpis všech záznamů databáze v CRUDu</a>
+    </div>
+{% endblock %}

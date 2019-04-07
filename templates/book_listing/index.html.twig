@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Books by Issue Century{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Books by issue century</h1>
+    <h2>Books issue till 1900</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Author</td>
+                <td>Year of Issue</td>
+                <td>Page Count</td>
+                <td>Price</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bookTill1900 in booksTill1900 %}
+            <tr>
+                <td>{{ bookTill1900.author }}</td>
+                <td>{{ bookTill1900.issueYear }}</td>
+                <td>{{ bookTill1900.pageCount }}</td>
+                <td>{{ bookTill1900.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Books issue from 1900 till 2000</h2>
+    <table>
+        <thead>
+        <tr>
+            <td>Author</td>
+            <td>Year of Issue</td>
+            <td>Page Count</td>
+            <td>Price</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book1900To2000 in books1900To2000 %}
+        <tr>
+            <td>{{ book1900To2000.author }}</td>
+            <td>{{ book1900To2000.issueYear }}</td>
+            <td>{{ book1900To2000.pageCount }}</td>
+            <td>{{ book1900To2000.price }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+    <h2>Books issued from 2000</h2>
+    <table>
+        <thead>
+        <tr>
+            <td>Author</td>
+            <td>Year of Issue</td>
+            <td>Page Count</td>
+            <td>Price</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book2000ToNow in books2000ToNow %}
+        <tr>
+            <td>{{ book2000ToNow.author }}</td>
+            <td>{{ book2000ToNow.issueYear }}</td>
+            <td>{{ book2000ToNow.pageCount }}</td>
+            <td>{{ book2000ToNow.price }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('book_index') }}">Výpis všech záznamů databáze v CRUDu</a>
+</div>
+{% endblock %}

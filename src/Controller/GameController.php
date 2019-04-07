@@ -30,13 +30,14 @@ class GameController extends AbstractController
      */
     public function modify(int $id, GameResultsRepository $gameResultsRepository)
     {
-        if (abs($id) > 100) {
-            if($id > 100) {
-                $id = 100;
-            } else {
-                $id = -100;
-            }
-        }
+        //if (abs($id) > 100) {
+        //    if($id > 100) {
+        //        $id = 100;
+        //    } else {
+           //     $id = -100;
+         //   }
+        //}
+
 
         $gameResults = $gameResultsRepository->find(1);
         $gameResults->setResult($gameResults->getResult() + $id);

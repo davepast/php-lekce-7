@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="BraincraftServer">
+        <serverdata>
+          <mappings>
+            <mapping deploy="php-lekce-7" local="$PROJECT_DIR$" web="/php-lekce-7" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/var/cache" />
+            <excludedPath local="true" path="/var/cache" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
